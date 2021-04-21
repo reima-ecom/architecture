@@ -1,0 +1,68 @@
+flowchart TD
+  subgraph cloudflare-workers
+  www
+  cart
+  subscribe
+  end
+
+  subgraph github-reima-ecom
+
+  subgraph reima-us
+  subgraph repo-reima-us
+  hugo-site
+  worker
+  end
+  gha-publish-worker
+  gha-refresh-data
+  end
+
+  subgraph reima-theme
+  subgraph repo-reima-theme
+  hugo-module
+  importers
+  end
+  end
+
+  end
+
+  subgraph netlify
+  build
+  hosting
+  end
+
+  cms-forestry
+  <-- content commit --> hugo-site
+
+  hugo-module
+  -- layout --> build
+  hugo-site
+  -- content & data --> build
+  == static html/css ==> hosting
+  <--> www
+  --> user-browser
+
+  worker
+  --> gha-publish-worker
+  == site business logic code ==> www
+
+  importers & api-yotpo & api-shopify & api-contentful
+  --> gha-refresh-data
+  == data commit ==> hugo-site
+
+  build
+  -- product data --> api-algolia
+  <-- search and filtering --> user-browser
+
+  api-shopify
+  <--> cart
+  <-- /cart --> user-browser
+  api-shopify
+  <--> subscribe
+  <-- /subscribe --> user-browser
+
+  api-shopify
+  <-- product sorting --> user-browser
+
+  click hugo-module "https://github.com/reima-ecom/reima-theme" _blank
+  click importers "https://github.com/reima-ecom/reima-theme/tree/main/importers" _blank
+  click cms-forestry "https://forestry.io/" _blank
