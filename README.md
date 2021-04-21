@@ -10,7 +10,7 @@ Note that it is notoriously difficult to keep documentation up to date, so this 
 
 ![site](./site.mmd.svg)
 
-[Open in full-sceen](/reima-ecom/architecture/raw/main/site.mmd.svg)
+[Open in full-sceen](https://raw.githubusercontent.com/reima-ecom/architecture/main/site.mmd.svg)
 
 How to read the flowchart:
 
