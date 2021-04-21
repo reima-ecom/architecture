@@ -10,6 +10,8 @@ Note that it is notoriously difficult to keep documentation up to date, so this 
 
 ![site](./site.mmd.svg)
 
+[Open in full-sceen](/reima-ecom/architecture/raw/main/site.mmd.svg)
+
 How to read the flowchart:
 
 - `github-reima-ecom`: Our organization in GitHub, containing repositories with their actual names
@@ -21,4 +23,4 @@ How to read the flowchart:
 - `hugo-*`: Code and content for use with the [Hugo static site generator](https://gohugo.io)
 - `gha-*`: GitHub Actions, i.e. CI/CD workflows running on GitHub infrastructure
 
-The chart contains nodes with links.
+The chart contains nodes with links, but for these to work you need to view the raw SVG file. Do this by opening the image in full-sceen via the link above.
